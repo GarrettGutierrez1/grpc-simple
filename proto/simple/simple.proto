@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/GarrettGutierrez1/simple/simple";
+
+package simple;
+
+import "simple/messages/messages.proto";
+
+// The greeting service definition.
+service Simple {
+  // Unary.
+  rpc SimpleUnary (simple.messages.SimpleRequest) returns (simple.messages.SimpleReply) {}
+  // Server-to-client streaming.
+  rpc SimpleServerStream (simple.messages.SimpleRequest) returns (stream simple.messages.SimpleReply) {}
+  // Client-to-server streaming.
+  rpc SimpleClientStream (stream simple.messages.SimpleRequest) returns (simple.messages.SimpleReply) {}
+  // Bidirectional streaming.
+  rpc SimpleBidirectionalStream (stream simple.messages.SimpleRequest) returns (stream simple.messages.SimpleReply) {}
+}

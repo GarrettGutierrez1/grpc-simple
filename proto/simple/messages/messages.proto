@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "github.com/GarrettGutierrez1/simple/simple/messages";
+
+package simple.messages;
+
+// The request message containing the user's name.
+message SimpleRequest {
+  string message = 1;
+}
+
+// The response message containing the reply.
+message SimpleReply {
+  string message = 1;
+}
